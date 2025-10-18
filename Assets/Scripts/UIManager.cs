@@ -5,8 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public void OnRestartPress()
+    public GameObject pauseUI;
+
+    public void OnGameRestart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void OnGamePause()
+    {
+        pauseUI.SetActive(true);
+    }
+
+    public void OnGameResume()
+    {
+        pauseUI.SetActive(false);
+    }
+
+    public void OnGameExit()
+    {
+        Application.Quit();
     }
 }
